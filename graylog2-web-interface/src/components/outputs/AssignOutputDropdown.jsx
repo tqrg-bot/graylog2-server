@@ -41,7 +41,7 @@ class AssignOutputDropdown extends React.Component {
     return (
       <div className="output-add">
         <div className="form-inline">
-          <select value={selectedOutput}
+          <select value={selectedOutput || this.PLACEHOLDER}
                   name="outputId"
                   className="form-control"
                   onChange={this._handleUpdate}>
@@ -52,7 +52,7 @@ class AssignOutputDropdown extends React.Component {
           <Button id="add-existing-output"
                   bsStyle="success"
                   type="button"
-                  disabled={selectedOutput === this.PLACEHOLDER}
+                  disabled={!selectedOutput}
                   onClick={this._handleClick}>
             Assign existing Output
           </Button>
